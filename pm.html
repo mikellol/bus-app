@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>ULOAX</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<!-- mapbox --> 
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+	<!--header section start -->
+    <div id="index.html" class="header_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-px"></div>
+                    <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                      <a href="dale.html" >DALE</a>
+                      <a href="c1.html">INFONAVIT 1</a>
+                      <a href="pc.html">PANAAMERICANA CENTRO</a>
+                      <a href="pm.html">PANAAMERICANA MIRADOR</a>
+                      <a href="2-octubre.html">2 OCTUBRE</a>
+                    </div></div>
+                    <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle-menu.png" class="toggle_menu"></span>
+                                
+                </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div class="menu_text">
+                        <ul>
+                            <li ><a href="index.html"> Home</a></li>                                                    
+                            <li><a href="about_us.html">About</a></li>
+                            <li><a href="Log in.html">Account</a></li>
+
+                </div>  
+                </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--mapbox section start -->
+  	<div id="map"></div>
+<script>
+ mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZWxsb2wiLCJhIjoiY2t3NGp0enMxMDMyMTJ3bzAzemVzbHE4ZyJ9.6SCX_ExLEBqNkpyrnNGZuw';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-106.084,28.6744],
+zoom: 10.8
+});
+ 
+map.on('load', () => {
+map.addSource('route', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'properties': {},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+[-106.10031257602064,28.640859229378336],
+[-106.09797440339818,28.63769140506328],
+[-106.09761583921703,28.634322131749357],
+[-106.0932918733134,28.634025926229384],
+[-106.08907337104344,28.63163774062565],
+[-106.08639462143489,28.63367418302866],
+[-106.08152225009918,28.630712071924805],
+[-106.0862746929117,28.633622786331102],
+[-106.08156579390801,28.63053567822108],
+[-106.07954091231349,28.632238905184437],
+[-106.08118612860913,28.63296091696735],
+[-106.07890813681539,28.634997333694187],
+[-106.08061663066056,28.63649685165656],
+[-106.08323210271959,28.634164258900256],
+[-106.08302117755336,28.63177607450467],
+[-106.09190112704451,28.63718180952162],
+[-106.0930612154576,28.635830401874486],
+[-106.09325102273374,28.634182779352486],
+[-106.09753280360435,28.634497497218092],
+[-106.09753280321509,28.637478010625443],
+[-106.09981079500825,28.64108783962473],
+[-106.10065449650064,28.640828677852227],
+[-106.10305904339344,28.641698722774308],
+[-106.10438787193976,28.642938987102582],
+[-106.10660258618285,28.64329070118417],
+[-106.10892276300962,28.644160725686973],
+[-106.11219224422848,28.644105368477412],
+[-106.11088450819925,28.646770931947145],
+[-106.11048375038388,28.648714529271444],
+[-106.11753317309345,28.649975607092657],
+[-106.11723787786062,28.65190063531142],
+[-106.11763863567599,28.65186361587142],
+[-106.1189252791893,28.651493420750484],
+[-106.11660510236251,28.64616246611206],
+[-106.11968460978703,28.646143955380936],
+[-106.12162512131492,28.646976935051626],
+[-106.1225742845618,28.647087998508482],
+[-106.12314378251038,28.647273104007937],
+[-106.1256537919863,28.64634757324491],
+[-106.12639201997627,28.6460699208575],
+[-106.12854345666982,28.647310133503197],
+[-106.12896530700169,28.647291622974606],
+[-106.12816379137095,28.646440135123214],
+[-106.12658186400678,28.645662682975484],
+[-106.12566841548659,28.644899172288078],
+[-106.1232216784465,28.64036389285242],
+[-106.12345369125887,28.63714279960365],
+[-106.12098586340392,28.63190368269774],
+[-106.11955160349947,28.62914517488352],
+[-106.1160502457431,28.62636807833843],
+[-106.11526982236163,28.62555345473784],
+[-106.11484797202975,28.625812655535356],
+[-106.11545965501077,28.626405112098453],
+[-106.11870790888766,28.628700841952536],
+[-106.12039702458104,28.631870181437407],
+[-106.12233753783738,28.636072597372177],
+[-106.12305468395428,28.637442512514923],
+[-106.12265392613891,28.639867591638946],
+[-106.12576701060767,28.645501833802044],
+[-106.1253451602758,28.646260775750818],
+[-106.12317263106513,28.64716779672925],
+[-106.12213909775167,28.646890138078334],
+[-106.12121102702072,28.646612478693342],
+[-106.1192283303173,28.645983114646185],
+[-106.11669722832428,28.646131200632027]
+
+]
+}
+}
+});
+map.addLayer({
+'id': 'route',
+'type': 'line',
+'source': 'route',
+'layout': {
+'line-join': 'round',
+'line-cap': 'round'
+},
+'paint': {
+'line-color': '#888',
+'line-width': 7
+}
+});
+});
+</script>
+  
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- javascript --> 
+    <script src="js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $(".fancybox").fancybox({
+    openEffect: "none",
+    closeEffect: "none"
+    });
+       
+    $(".zoom").hover(function(){
+         
+    $(this).addClass('transition');
+    }, function(){
+         
+    $(this).removeClass('transition');
+    });
+    });
+    </script> 
+    <script>
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+   document.getElementById("myNav").style.width = "0%";
+   }
+</script> 
+
+</body>
+</html>

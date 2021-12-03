@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>ULOAX</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<!-- mapbox --> 
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+	<!--header section start -->
+    <div id="index.html" class="header_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-px"></div>
+                    <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                      <a href="dale.html" >DALE</a>
+                      <a href="c1.html">INFONAVIT 1</a>
+                      <a href="pc.html">PANAAMERICANA CENTRO</a>
+                      <a href="pm.html">PANAAMERICANA MIRADOR</a>
+                      <a href="2-octubre.html">2 OCTUBRE</a>
+                    </div></div>
+                    <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle-menu.png" class="toggle_menu"></span>
+                                
+                </div>
+                <div class="col-sm-6 col-lg-9">
+                    <div class="menu_text">
+                        <ul>
+                            <li ><a href="index.html"> Home</a></li>                                                    
+                            <li><a href="about_us.html">About</a></li>
+                            <li><a href="Log in.html">Account</a></li>
+
+                </div>  
+                </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--mapbox section start -->
+  	<div id="map"></div>
+<script>
+ mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZWxsb2wiLCJhIjoiY2t3NGp0enMxMDMyMTJ3bzAzemVzbHE4ZyJ9.6SCX_ExLEBqNkpyrnNGZuw';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-106.084,28.6744],
+zoom: 10.8
+});
+ 
+map.on('load', () => {
+map.addSource('route', {
+'type': 'geojson',
+'data': {
+'type': 'Feature',
+'properties': {},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+
+[-106.10767977162958,28.680671172308948],
+[-106.10530512535706,28.678832953426593],
+[-106.10984489028982,28.6773010797139],
+[-106.11096237088849,28.679752066900377],
+[-106.11543229328346,28.677852556831056],
+[-106.11819107351252,28.678771678909314],
+[-106.11930855411119,28.677607456250243],
+[-106.12088001120338,28.677055977842713],
+[-106.12227686195173,28.67843466841765],
+[-106.12287052351975,28.678036381893207],
+[-106.12632772912221,28.685327849086974],
+[-106.1300293846785,28.683979885610043],
+[-106.12688647049441,28.677362355705938],
+[-106.1324020246862,28.67097484194838],
+[-106.13446680504393,28.67383332363046],
+[-106.1362897127703,28.68336103567117],
+[-106.13341958425495,28.684075578772607],
+[-106.12985131637059,28.684109604512997],
+[-106.12624426296576,28.685232447743573],
+[-106.1228311371633,28.686457353899442],
+[-106.11992222312747,28.68057086830342],
+[-106.11712965652856,28.678767437973576],
+[-106.1146861693838,28.678325079018066],
+[-106.1078599177789,28.68091114576839]
+
+]
+}
+}
+});
+map.addLayer({
+'id': 'route',
+'type': 'line',
+'source': 'route',
+'layout': {
+'line-join': 'round',
+'line-cap': 'round'
+},
+'paint': {
+'line-color': '#888',
+'line-width': 8
+}
+});
+});
+</script>
+  
+    <!-- Javascript files-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- javascript --> 
+    <script src="js/owl.carousel.js"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $(".fancybox").fancybox({
+    openEffect: "none",
+    closeEffect: "none"
+    });
+       
+    $(".zoom").hover(function(){
+         
+    $(this).addClass('transition');
+    }, function(){
+         
+    $(this).removeClass('transition');
+    });
+    });
+    </script> 
+    <script>
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+   document.getElementById("myNav").style.width = "0%";
+   }
+</script> 
+
+</body>
+</html>
